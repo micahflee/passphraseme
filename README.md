@@ -15,5 +15,5 @@ borrower harvest stature entity blimp
 
 ```sh
 $ git clone https://github.com/micahflee/passphraseme.git
-$ cp passphraseme /usr/local/bin
+$ cp passphraseme/passphraseme /usr/local/bin
 ```
