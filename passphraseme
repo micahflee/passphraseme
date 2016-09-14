@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import argparse
 from random import SystemRandom
+import sys
 
 """
 EFF's excellent wordlist
@@ -12,11 +13,21 @@ words = ['abacus', 'abdomen', 'abdominal', 'abide', 'abiding', 'ability', 'ablaz
 def generate(word_count=7):
     return ' '.join(SystemRandom().sample(words, word_count))
 
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('word_count', metavar='word_count', default=7, help='Word count')
+    parser.add_argument('-d', '--dictionary', nargs='?', metavar='dictionary', help='Dictionary file')
     args = parser.parse_args()
 
+    if args.dictionary is not None:
+        try:
+            with open(args.dictionary) as f:
+                words = [line.rstrip('\n') for line in open(args.dictionary)]
+        except FileNotFoundError:
+            print("The file doesn't exist.")
+            sys.exit()
+    if not args.word_count.isdigit():
+        print("Please input a valid number.")
+        sys.exit()
     passphrase = generate(int(args.word_count))
     print(passphrase)
