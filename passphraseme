@@ -1200,7 +1200,7 @@ words = ['abacus', 'abdomen', 'abdominal', 'abide', 'abiding', 'ability',
     'zoologist', 'zoology', 'zoom']
 
 def generate(word_count=7):
-    return ' '.join(choice(words) for i in range(word_count))
+    return ' '.join(choice(words) for _ in range(word_count))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
