@@ -1,6 +1,6 @@
 # PassphraseMe
 
-A quick and simple cryptographically secure script to generate high entropy passphrases using [the Electronic Frontier Foundation's word list](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
+A quick and simple cryptographically secure script to generate high entropy passphrases using [the Electronic Frontier Foundation's wordlists](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
 
 ## Usage
 
