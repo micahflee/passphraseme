@@ -1211,7 +1211,7 @@ if __name__ == '__main__':
     if args.dictionary is not None:
         try:
             with open(args.dictionary) as f:
-                words = [line.rstrip('\n') for line in open(args.dictionary)]
+                words = [line.rstrip('\n') for line in f]
         except FileNotFoundError:
             print("The file doesn't exist.")
             sys.exit()
