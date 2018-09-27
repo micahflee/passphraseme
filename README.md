@@ -13,10 +13,7 @@ borrower harvest stature entity blimp
 
 ## Installation
 
-```sh
-$ git clone https://github.com/micahflee/passphraseme.git
-$ cp passphraseme/passphraseme /usr/local/bin
-```
+_TODO: Upload to PyPI. Then the instructions will just be to install with pip3._
 
 ## Strength of passphrases
 
