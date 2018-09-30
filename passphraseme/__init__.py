@@ -21,19 +21,16 @@ def generate(filename, word_count=7):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('word_count', metavar='word_count', default=7, type=int, help='Word count')
-    parser.add_argument('-s1', '--short1', action="store_true", help="Use EFF's general short wordlist")
-    parser.add_argument('-s2', '--short2', action="store_true", help="Use EFF's short wordlist with unique prefixes")
-    parser.add_argument('-d', '--dictionary', nargs='?', metavar='dictionary', help='Custom wordlist filename')
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('-s1', '--short1', action="store_true", help="Use EFF's general short wordlist")
+    group.add_argument('-s2', '--short2', action="store_true", help="Use EFF's short wordlist with unique prefixes")
+    group.add_argument('-d', '--dictionary', nargs='?', metavar='dictionary', help='Custom wordlist filename')
     args = parser.parse_args()
 
     if args.dictionary is not None:
         filename = args.dictionary
     else:
         wordlists_path = os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), 'wordlists')
-
-        if args.short1 and args.short2:
-            print("Select only one wordlist")
-            sys.exit()
 
         if args.short1:
             filename = os.path.join(wordlists_path, 'eff_short_wordlist_1.txt')
