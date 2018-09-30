@@ -20,7 +20,7 @@ def generate(filename, word_count=7):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('word_count', metavar='word_count', default=7, help='Word count')
+    parser.add_argument('word_count', metavar='word_count', default=7, type=int, help='Word count')
     parser.add_argument('-s1', '--short1', action="store_true", help="Use EFF's general short wordlist")
     parser.add_argument('-s2', '--short2', action="store_true", help="Use EFF's short wordlist with unique prefixes")
     parser.add_argument('-d', '--dictionary', nargs='?', metavar='dictionary', help='Custom wordlist filename')
@@ -42,11 +42,7 @@ def main():
         else:
             filename = os.path.join(wordlists_path, 'eff_large_wordlist.txt')
 
-    if not args.word_count.isdigit():
-        print("Please input a valid number.")
-        sys.exit()
-
-    passphrase = generate(filename, int(args.word_count))
+    passphrase = generate(filename, args.word_count)
     print(passphrase)
 
 
