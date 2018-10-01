@@ -1,6 +1,6 @@
 # passphraseme
 
-A quick and simple cryptographically secure script to generate high entropy passphrases using [the Electronic Frontier Foundation's wordlists](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
+A quick and simple cryptographically secure script to generate high entropy passphrases using [the Electronic Frontier Foundation's wordlists](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases), including their [fandom-inspired wordlists](https://www.eff.org/deeplinks/2018/08/dragon-con-diceware).
 
 ## Installation
 
@@ -63,3 +63,12 @@ Note that the time "3.2e19 y" means "3.2 x 10<sup>19</sup> years". Also note
 that the brute force times will vary wildly, both much quicker or much slower,
 depending on the hash function or [KDF](https://en.wikipedia.org/wiki/Key_derivation_function)
 used -- basically, depending on what software you're using this passphrase with.
+
+## Licenses
+
+The wordlists included were created by Electronic Frontier Foundation, and are
+distributed under the Creative Commons Attribution 3.0. For the fandom wordlists
+(Game of Thrones, Harry Potter, Star Trek, and Star Wars), EFF notes that "Any
+trademarks within the word list are the property of their respective trademark
+holders, who are not affiliated with the Electronic Frontier Foundation and do
+not sponsor or endorse these passwords."
