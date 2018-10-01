@@ -31,8 +31,13 @@ def seconds_to_printable(seconds):
         return "{0} y".format(years)
     elif years < 1000000:
         return "{0:.2f}k y".format(years / 1000)
+    elif years < 1000000000:
+        return "{0}M y".format(math.floor(years / 1000000))
+    elif years < 1000000000000:
+        return "{0}B y".format(math.floor(years / 1000000000))
     else:
         return "{0:.2e} y".format(years)
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -46,7 +51,7 @@ def main():
     aws_instance_cost_per_hour = 24.48
     aws_instance_cost_per_day = aws_instance_cost_per_hour * 24
     attacker_budget_per_day = 1000000000
-    total_aws_instances = math.floor(attacker_budget_per_day / aws_instance_cost_per_hour)
+    total_aws_instances = math.floor(attacker_budget_per_day / aws_instance_cost_per_day)
     total_aws_guesses_per_second = aws_guesses_per_second_per_instance * total_aws_instances
 
     # Display these details
