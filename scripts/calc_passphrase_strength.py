@@ -30,7 +30,7 @@ def seconds_to_printable(seconds):
     elif years < 1000:
         return "{0} y".format(years)
     elif years < 1000000:
-        return "{0:.2f}k y".format(years / 1000)
+        return "{0:.1f}k y".format(years / 1000)
     elif years < 1000000000:
         return "{0}M y".format(math.floor(years / 1000000))
     elif years < 1000000000000:
@@ -73,7 +73,7 @@ def main():
         avg_time_seconds = time_seconds / 2 # attacks have to search half the keyspace on average
 
         row_num_words.append("{0}".format(num_words))
-        row_entropy.append("{0:.3f}".format(num_words * entropy_per_word))
+        row_entropy.append("{0:.1f}".format(num_words * entropy_per_word))
         row_time.append(seconds_to_printable(avg_time_seconds))
 
     table_data = [
