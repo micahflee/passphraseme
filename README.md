@@ -40,10 +40,11 @@ leading's Oz's caesareans lactate eloped interposed wowed
 
 This table shows the strength (bits of entropy) of `passphraseme`-generated passphrases of different lengths (1-10 words).
 
-|                                | Bits of entropy/word | 1          | 2          | 3          | 4           | 5            | 6             | 7            | 8              | 9                | 10             |
-|--------------------------------|----------------------|------------|------------|------------|-------------|--------------|---------------|--------------|----------------|------------------|----------------|
-| EFF large wordlist (*default*) | 12.9                 | 12.9 (0 s) | 25.8 (0 s) | 38.7 (1 s) | 51.6 (86 m) | 64.5 (1.2 y) | 77.4 (9.5k y) | 90.3 (73M y) | 103.2 (560B y) | 116.1 (4.2e15 y) | 129 (3.2e19 y) |
-| EFF short wordlists            | 10.3                 | 10.3 (0 s) | 20.6 (0 s) | 30.9 (0 s) | 41.2 (4 s)  | 51.5 (80 m)  | 61.8 (70 d)   | 72.1 (243 y) | 82.4 (306k y)  | 92.7 (386M y)    | 103 (4.8e11 y) |
+|                                | Bits of entropy/word | 1          | 2          | 3          | 4          | 5          | 6              | 7             | 8               | 9                 | 10                |
+|--------------------------------|----------------------|------------|------------|------------|------------|------------|----------------|---------------|-----------------|-------------------|-------------------|
+| EFF large wordlist (*default*) | 12.925               | 12.9 (0 s) | 25.8 (0 s) | 38.8 (0 s) | 51.7 (1 h) | 64.6 (1 y) | 77.5 (10.6k y) | 90.5 (82M y)  | 103.4 (642B y)  | 116.3 (4.99e15 y) | 129.2 (3.88e19 y) |
+| EFF short wordlists            | 10.339               | 10.3 (0 s) | 20.7 (0 s) | 31.0 (0 s) | 41.4 (4 s) | 51.7 (1 h) | 62.0 (83 d)    | 72.4 (295 y)  | 82.7 (382.3k y) | 93.1 (495M y)     | 103.4 (642B y)    |
+| EFF fandom wordlists           | 12.966               | 13.0 (0 s) | 25.9 (0 s) | 38.9 (0 s) | 51.9 (1 h) | 64.8 (1 y) | 77.8 (12.6k y) | 90.8 (100M y) | 103.7 (805B y)  | 116.7 (6.45e15 y) | 129.7 (5.16e19 y) |
 
 The brute force time is calculated like this:
 
@@ -59,7 +60,7 @@ meaning they can guess ~330 billion passphrases per second. On average, a brute
 force attack will find the passphrase after searching half the keyspace, so the
 times above are how long it takes to search half the keyspace.
 
-Note that the time "3.2e19 y" means "3.2 x 10<sup>19</sup> years". Also note
+Note that the time "5.16e19 y" means "5.16 x 10<sup>19</sup> years". Also note
 that the brute force times will vary wildly, both much quicker or much slower,
 depending on the hash function or [KDF](https://en.wikipedia.org/wiki/Key_derivation_function)
 used -- basically, depending on what software you're using this passphrase with.
