@@ -36,13 +36,13 @@ def main():
         elif args.short2:
             filename = os.path.join(wordlists_path, 'eff_short_wordlist_2_0.txt')
         elif args.game_of_thrones:
-            filename = os.path.join(wordlists_path, 'gameofthrones_8k-2018.txt')
+            filename = os.path.join(wordlists_path, 'gameofthrones-2018.txt')
         elif args.harry_potter:
-            filename = os.path.join(wordlists_path, 'harrypotter_8k_2018.txt')
+            filename = os.path.join(wordlists_path, 'harrypotter-2018.txt')
         elif args.star_trek:
-            filename = os.path.join(wordlists_path, 'memory-alpha_8k_2018.txt')
+            filename = os.path.join(wordlists_path, 'startrek-2018.txt')
         elif args.star_wars:
-            filename = os.path.join(wordlists_path, 'starwars_8k_2018.txt')
+            filename = os.path.join(wordlists_path, 'starwars-2018.txt')
         else:
             filename = os.path.join(wordlists_path, 'eff_large_wordlist.txt')
 
