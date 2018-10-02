@@ -10,7 +10,8 @@ pip3 install passphraseme
 
 ## Usage
 
-Run `passphraseme` with a number to generate secure passphrases, like this:
+Run `passphraseme` with a number to generate secure passphrases using EFF's
+large wordlist, like this:
 
 ```
 $ passphraseme 7
@@ -19,14 +20,40 @@ $ passphraseme 5
 borrower harvest stature entity blimp
 ```
 
-By default, `passphraseme` uses EFF's long wordlist. But optionally, you can choose
-to use one of EFF's two short wordlists, like this:
+You can also optionally choose a different wordlist. Here are all of the command
+line arguments:
+
+| Short             | Long                        | Description                                                           |
+|-------------------|-----------------------------|-----------------------------------------------------------------------|
+| `-h`              | `--help`                    | show help message                                                     |
+| `-s1`             | `--short1`                  | Use EFF's general short wordlist                                      |
+| `-s2`             | `--short2`                  | Use EFF's short wordlist with unique prefixes                         |
+| `-got`            | `--game-of-thrones`         | Use EFF's Game of Thrones wordlist (Passwords of Westeros)            |
+| `-hp`             | `--harry-potter`            | Use EFF's Harry Potter wordlist (Accio Passphrase!)                   |
+| `-st`             | `--star-trek`               | Use EFF's Star Trek wordlist (Live Long and Passphrase)               |
+| `-sw`             | `--star-wars`               | Use EFF's Star Wars wordlist (The Passphrase Is Strong With This One) |
+| `-d [dictionary]` | `--dictionary [dictionary]` | Custom wordlist filename                                              |
+
+For example, you can choose to use one of EFF's short wordlists, like this:
 
 ```
 $ passphraseme -s1 5
 glide canal flag sage those
 $ passphraseme -s2 5
 optical anonymous nirvana agitate feudalist
+```
+
+Or you can embrace your inner nerd and use a fandom wordlist:
+
+```
+$ passphraseme --game-of-thrones 5
+crow betrayed severely gloating asked
+$ passphraseme --harry-potter 5
+mirror relief date future mysterious
+$ passphraseme --star-trek 5
+children refused captain cornwell vulcan
+$ passphraseme --star-wars 5
+unkar struggle names ally cantina
 ```
 
 You can also choose to use a custom wordlist, like this:
@@ -40,11 +67,11 @@ leading's Oz's caesareans lactate eloped interposed wowed
 
 This table shows the strength (bits of entropy) of `passphraseme`-generated passphrases of different lengths (1-10 words).
 
-|                                | Bits of entropy/word | 1          | 2          | 3          | 4          | 5          | 6              | 7             | 8               | 9                 | 10                |
-|--------------------------------|----------------------|------------|------------|------------|------------|------------|----------------|---------------|-----------------|-------------------|-------------------|
-| EFF large wordlist (*default*) | 12.925               | 12.9 (0 s) | 25.8 (0 s) | 38.8 (0 s) | 51.7 (1 h) | 64.6 (1 y) | 77.5 (10.6k y) | 90.5 (82M y)  | 103.4 (642B y)  | 116.3 (4.99e15 y) | 129.2 (3.88e19 y) |
-| EFF short wordlists            | 10.339               | 10.3 (0 s) | 20.7 (0 s) | 31.0 (0 s) | 41.4 (4 s) | 51.7 (1 h) | 62.0 (83 d)    | 72.4 (295 y)  | 82.7 (382.3k y) | 93.1 (495M y)     | 103.4 (642B y)    |
-| EFF fandom wordlists           | 12.966               | 13.0 (0 s) | 25.9 (0 s) | 38.9 (0 s) | 51.9 (1 h) | 64.8 (1 y) | 77.8 (12.6k y) | 90.8 (100M y) | 103.7 (805B y)  | 116.7 (6.45e15 y) | 129.7 (5.16e19 y) |
+|                                | Bits of entropy/word | 1          | 2          | 3          | 4          | 5           | 6              | 7               | 8               | 9                 | 10                |
+|--------------------------------|----------------------|------------|------------|------------|------------|-------------|----------------|-----------------|-----------------|-------------------|-------------------|
+| EFF large wordlist (*default*) | 12.925               | 12.9 (0 s) | 25.8 (0 s) | 38.8 (0 s) | 51.7 (1 h) | 64.6 (1 y)  | 77.5 (10.6k y) | 90.5 (82M y)    | 103.4 (642B y)  | 116.3 (4.99e15 y) | 129.2 (3.88e19 y) |
+| EFF short wordlists            | 10.339               | 10.3 (0 s) | 20.7 (0 s) | 31.0 (0 s) | 41.4 (4 s) | 51.7 (1 h)  | 62.0 (83 d)    | 72.4 (295 y)    | 82.7 (382.3k y) | 93.1 (495M y)     | 103.4 (642B y)    |
+| EFF fandom wordlists           | 11.965               | 12.0 (0 s) | 23.9 (0 s) | 35.9 (0 s) | 47.9 (6 m) | 59.8 (17 d) | 71.8 (196 y)   | 83.8 (787.1k y) | 95.7 (3B y)     | 107.7 (1.26e13 y) | 119.7 (5.04e16 y) |
 
 The brute force time is calculated like this:
 
