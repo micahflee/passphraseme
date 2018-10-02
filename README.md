@@ -87,10 +87,13 @@ meaning they can guess ~330 billion passphrases per second. On average, a brute
 force attack will find the passphrase after searching half the keyspace, so the
 times above are how long it takes to search half the keyspace.
 
-Note that the time "5.16e19 y" means "5.16 x 10<sup>19</sup> years". Also note
+Note that the time "3.88e19 y" means "3.88 x 10<sup>19</sup> years". Also note
 that the brute force times will vary wildly, both much quicker or much slower,
 depending on the hash function or [KDF](https://en.wikipedia.org/wiki/Key_derivation_function)
 used -- basically, depending on what software you're using this passphrase with.
+
+Check out [calc_passphrase_strength.py](/scripts/calc_passphrase_strength.py) to
+see the maths.
 
 ## Licenses
 
