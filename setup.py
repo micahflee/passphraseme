@@ -12,7 +12,6 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="GPLv3+",
-    python_requires=">=3.4",
     url="https://github.com/micahflee/passphraseme",
     packages=['passphraseme'],
     package_data={'passphraseme': ['wordlists/*.txt']},
