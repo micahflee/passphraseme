@@ -18,7 +18,7 @@ setuptools.setup(
     package_data={'passphraseme': ['wordlists/*.txt']},
     classifiers=(
         "Development Status :: 4 - Beta",
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python",
         "Topic :: Security :: Cryptography",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",

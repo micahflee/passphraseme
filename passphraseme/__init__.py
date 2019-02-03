@@ -3,14 +3,21 @@
 import argparse
 import inspect
 import os
-from secrets import choice
+
+try:
+    from secrets import choice
+except:
+    from random import SystemRandom
 
 
 def generate(filename, word_count=7):
     with open(filename) as f:
         words = [line.rstrip('\n') for line in f]
 
-    return ' '.join(choice(words) for _ in range(word_count))
+    try:
+        return ' '.join(choice(words) for _ in range(word_count))
+    except:
+        return ' '.join(SystemRandom().sample(words, word_count))
 
 
 def main():
