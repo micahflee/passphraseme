@@ -13,8 +13,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     license="GPLv3+",
     url="https://github.com/micahflee/passphraseme",
-    packages=['passphraseme'],
-    package_data={'passphraseme': ['wordlists/*.txt']},
+    packages=["passphraseme"],
+    package_data={"passphraseme": ["wordlists/*.txt"]},
     classifiers=(
         "Development Status :: 4 - Beta",
         "Programming Language :: Python",
@@ -26,9 +26,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
         "Intended Audience :: System Administrators",
     ),
-    entry_points={
-        'console_scripts': [
-            'passphraseme = passphraseme:main',
-        ],
-    },
+    entry_points={"console_scripts": ["passphraseme = passphraseme:main",],},
 )

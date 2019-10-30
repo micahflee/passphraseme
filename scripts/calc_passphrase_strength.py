@@ -41,7 +41,9 @@ def seconds_to_printable(seconds):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('size', metavar='size', type=int, help='Number of words in wordlist')
+    parser.add_argument(
+        "size", metavar="size", type=int, help="Number of words in wordlist"
+    )
     args = parser.parse_args()
 
     # Here's what we know
@@ -51,40 +53,49 @@ def main():
     aws_instance_cost_per_hour = 24.48
     aws_instance_cost_per_day = aws_instance_cost_per_hour * 24
     attacker_budget_per_day = 1000000000
-    total_aws_instances = math.floor(attacker_budget_per_day / aws_instance_cost_per_day)
-    total_aws_guesses_per_second = aws_guesses_per_second_per_instance * total_aws_instances
+    total_aws_instances = math.floor(
+        attacker_budget_per_day / aws_instance_cost_per_day
+    )
+    total_aws_guesses_per_second = (
+        aws_guesses_per_second_per_instance * total_aws_instances
+    )
 
     # Display these details
     print("Number of words: {}".format(wordlist_size))
     print("Entropy per word: {}".format(entropy_per_word))
-    print("Each AWS instance has this many guesses per second: {}".format(aws_guesses_per_second_per_instance))
+    print(
+        "Each AWS instance has this many guesses per second: {}".format(
+            aws_guesses_per_second_per_instance
+        )
+    )
     print("Attacker can afford this many AWS instances: {}".format(total_aws_instances))
-    print("Attacker's total guesses per second: {}".format(total_aws_guesses_per_second))
+    print(
+        "Attacker's total guesses per second: {}".format(total_aws_guesses_per_second)
+    )
     print("")
 
     # Build the passphrase strength table
-    row_num_words = ['Number of words']
-    row_entropy = ['Entropy']
-    row_time = ['Average time']
+    row_num_words = ["Number of words"]
+    row_entropy = ["Entropy"]
+    row_time = ["Average time"]
     for num_words in range(1, 11):
         entropy = num_words * entropy_per_word
-        total_keyspace = wordlist_size**num_words
+        total_keyspace = wordlist_size ** num_words
         time_seconds = total_keyspace / total_aws_guesses_per_second
-        avg_time_seconds = time_seconds / 2 # attacks have to search half the keyspace on average
+        avg_time_seconds = (
+            time_seconds / 2
+        )  # attacks have to search half the keyspace on average
 
         row_num_words.append("{0}".format(num_words))
         row_entropy.append("{0:.1f}".format(num_words * entropy_per_word))
         row_time.append(seconds_to_printable(avg_time_seconds))
 
-    table_data = [
-        row_num_words,
-        row_entropy,
-        row_time
-    ]
+    table_data = [row_num_words, row_entropy, row_time]
     table = AsciiTable(table_data)
 
     print("Passphrase strength table:")
     print(table.table)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
