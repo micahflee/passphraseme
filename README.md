@@ -26,6 +26,7 @@ line arguments:
 | Short             | Long                        | Description                                                           |
 |-------------------|-----------------------------|-----------------------------------------------------------------------|
 | `-h`              | `--help`                    | show help message                                                     |
+|                   | `--sep`                     | Separator (default " ")                                               |
 | `-s1`             | `--short1`                  | Use EFF's general short wordlist                                      |
 | `-s2`             | `--short2`                  | Use EFF's short wordlist with unique prefixes                         |
 | `-got`            | `--game-of-thrones`         | Use EFF's Game of Thrones wordlist (Passwords of Westeros)            |
@@ -61,6 +62,15 @@ You can also choose to use a custom wordlist, like this:
 ```
 $ passphraseme -d /usr/share/dict/words 7
 leading's Oz's caesareans lactate eloped interposed wowed
+```
+
+And if you prefer, you can use a custom separator, like `-` instead of ` `:
+
+```
+$ passphraseme --sep - 5
+ungreased-tried-broadcast-deduce-yield
+$ passphraseme --sep . 5
+parmesan.unkempt.budget.premiere.puritan
 ```
 
 ## Strength of passphrases
