@@ -10,14 +10,14 @@ except:
     from random import SystemRandom
 
 
-def generate(filename, word_count=7):
+def generate(filename, word_count, sep):
     with open(filename) as f:
         words = [line.rstrip("\n") for line in f]
 
     try:
-        return " ".join(choice(words) for _ in range(word_count))
+        return sep.join(choice(words) for _ in range(word_count))
     except:
-        return " ".join(SystemRandom().sample(words, word_count))
+        return sep.join(SystemRandom().sample(words, word_count))
 
 
 def main():
@@ -30,6 +30,15 @@ def main():
         default=7,
         type=int,
         help="Word count",
+    )
+    parser.add_argument(
+        "--sep",
+        metavar="sep",
+        nargs="?",
+        const=1,
+        default=" ",
+        type=str,
+        help="Separator",
     )
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
@@ -98,7 +107,7 @@ def main():
         else:
             filename = os.path.join(wordlists_path, "eff_large_wordlist.txt")
 
-    passphrase = generate(filename, args.word_count)
+    passphrase = generate(filename, args.word_count, args.sep)
     print(passphrase)
 
 
