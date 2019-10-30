@@ -23,7 +23,13 @@ def generate(filename, word_count=7):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "word_count", metavar="word_count", default=7, type=int, help="Word count"
+        "word_count",
+        metavar="word_count",
+        nargs="?",
+        const=1,
+        default=7,
+        type=int,
+        help="Word count",
     )
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
