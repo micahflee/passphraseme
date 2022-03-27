@@ -10,24 +10,23 @@ pip3 install passphraseme
 
 ## Usage
 
-Run `passphraseme` with a number to generate secure passphrases using EFF's
-large wordlist, like this:
+Run `passphraseme` with a number to generate secure passphrases using EFF's short wordlist, like this:
 
 ```
 $ passphraseme 7
-banana stopwatch appealing germinate survival retired comma
+plug-scan-skate-shown-ritzy-self-bud
 $ passphraseme 5
-borrower harvest stature entity blimp
+drank-amino-spoil-badge-copy
 ```
 
-You can also optionally choose a different wordlist. Here are all of the command
-line arguments:
+You can also optionally choose a different wordlist. Here are all of the command line arguments:
 
 | Short             | Long                        | Description                                                           |
 |-------------------|-----------------------------|-----------------------------------------------------------------------|
 | `-h`              | `--help`                    | show help message                                                     |
-|                   | `--sep`                     | Separator (default " ")                                               |
-| `-s1`             | `--short1`                  | Use EFF's general short wordlist                                      |
+|                   | `--sep`                     | Separator (default "-")                                               |
+| `-l`              | `--large`                   | Use EFF's general large wordlist                                      |
+| `-s1`             | `--short1`                  | Use EFF's general short wordlist (default)                            |
 | `-s2`             | `--short2`                  | Use EFF's short wordlist with unique prefixes                         |
 | `-got`            | `--game-of-thrones`         | Use EFF's Game of Thrones wordlist (Passwords of Westeros)            |
 | `-hp`             | `--harry-potter`            | Use EFF's Harry Potter wordlist (Accio Passphrase!)                   |
@@ -35,42 +34,40 @@ line arguments:
 | `-sw`             | `--star-wars`               | Use EFF's Star Wars wordlist (The Passphrase Is Strong With This One) |
 | `-d [dictionary]` | `--dictionary [dictionary]` | Custom wordlist filename                                              |
 
-For example, you can choose to use one of EFF's short wordlists, like this:
+For example, you can choose to EFF's short wordlist with unique prefixes like this:
 
 ```
-$ passphraseme -s1 5
-glide canal flag sage those
 $ passphraseme -s2 5
-optical anonymous nirvana agitate feudalist
+leftover-human-podiatrist-clergyman-elk
 ```
 
 Or you can embrace your inner nerd and use a fandom wordlist:
 
 ```
 $ passphraseme --game-of-thrones 5
-crow betrayed severely gloating asked
+skull-putting-twenty-aid-bluntly
 $ passphraseme --harry-potter 5
-mirror relief date future mysterious
+summoning-jealous-loads-somehow-unregistered
 $ passphraseme --star-trek 5
-children refused captain cornwell vulcan
+destroying-maximum-radiation-yells-causes
 $ passphraseme --star-wars 5
-unkar struggle names ally cantina
+duels-zett-rock-silenced-blockade
 ```
 
 You can also choose to use a custom wordlist, like this:
 
 ```
 $ passphraseme -d /usr/share/dict/words 7
-leading's Oz's caesareans lactate eloped interposed wowed
+Sphinx's-congas-adjudge-revalue-scotched-decapitations-scampered
 ```
 
-And if you prefer, you can use a custom separator, like `-` instead of ` `:
+And if you prefer, you can use a custom separator, like ` ` or `.` instead of `-`:
 
 ```
-$ passphraseme --sep - 5
-ungreased-tried-broadcast-deduce-yield
+$ passphraseme --sep " " 5
+drown elder drown sport hula
 $ passphraseme --sep . 5
-parmesan.unkempt.budget.premiere.puritan
+stage.stash.speak.shack.pound
 ```
 
 ## Strength of passphrases

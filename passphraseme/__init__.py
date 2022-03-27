@@ -36,11 +36,14 @@ def main():
         metavar="sep",
         nargs="?",
         const=1,
-        default=" ",
+        default="-",
         type=str,
         help="Separator",
     )
     group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        "-l", "--large", action="store_true", help="Use EFF's general large wordlist"
+    )
     group.add_argument(
         "-s1", "--short1", action="store_true", help="Use EFF's general short wordlist"
     )
@@ -92,6 +95,8 @@ def main():
             "wordlists",
         )
 
+        if args.large:
+            filename = os.path.join(wordlists_path, "eff_large_wordlist.txt")
         if args.short1:
             filename = os.path.join(wordlists_path, "eff_short_wordlist_1.txt")
         elif args.short2:
@@ -105,7 +110,7 @@ def main():
         elif args.star_wars:
             filename = os.path.join(wordlists_path, "starwars-2018.txt")
         else:
-            filename = os.path.join(wordlists_path, "eff_large_wordlist.txt")
+            filename = os.path.join(wordlists_path, "eff_short_wordlist_1.txt")
 
     passphrase = generate(filename, args.word_count, args.sep)
     print(passphrase)
