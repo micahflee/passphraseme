@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="passphraseme",
-    version="0.1.4",
+    version="0.1.5",
     author="Micah Lee",
     author_email="micah@micahflee.com",
     description="A quick and simple cryptographically secure script to generate high entropy passphrases using the Electronic Frontier Foundation's wordlists",
@@ -26,5 +26,9 @@ setuptools.setup(
         "Operating System :: OS Independent",
         "Intended Audience :: System Administrators",
     ),
-    entry_points={"console_scripts": ["passphraseme = passphraseme:main",],},
+    entry_points={
+        "console_scripts": [
+            "passphraseme = passphraseme:main",
+        ],
+    },
 )
