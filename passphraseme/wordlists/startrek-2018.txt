@@ -864,7 +864,6 @@ crush
 cry
 cryptobiosis
 crystal
-c�sar
 cube
 culture
 cumulative
@@ -1404,7 +1403,6 @@ fellow
 felt
 fend
 few
-fianc�e
 field
 fifteen
 fifty
@@ -1508,7 +1506,6 @@ frightened
 from
 front
 frontal
-fucking
 fulfill
 full
 fumes
