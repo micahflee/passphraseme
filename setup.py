@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="passphraseme",
-    version="0.1.5",
+    version="0.1.6",
     author="Micah Lee",
     author_email="micah@micahflee.com",
     description="A quick and simple cryptographically secure script to generate high entropy passphrases using the Electronic Frontier Foundation's wordlists",
@@ -16,7 +16,6 @@ setuptools.setup(
     packages=["passphraseme"],
     package_data={"passphraseme": ["wordlists/*.txt"]},
     classifiers=(
-        "Development Status :: 4 - Beta",
         "Programming Language :: Python",
         "Topic :: Security :: Cryptography",
         "Topic :: Software Development :: Libraries :: Python Modules",
