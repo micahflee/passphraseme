@@ -1217,7 +1217,6 @@ escort
 escorting
 escorts
 espa
-espa�a
 essentially
 establish
 estimated
@@ -2288,7 +2287,6 @@ mustafar
 musters
 mutilated
 mutiny
-�mwe
 mygeeto
 mynocks
 mysterious
@@ -2462,7 +2460,6 @@ ozzel
 packet
 padawan
 padawans
-padm�
 paige
 pain
 pair
@@ -3791,7 +3788,6 @@ valid
 valuable
 vander
 vandor
-vane�
 vanished
 vanishes
 varactyl
@@ -3838,7 +3834,6 @@ volcanic
 volley
 volunteer
 vos
-vos�
 vows
 vulnerability
 vulnerable
