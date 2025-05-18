@@ -15,7 +15,7 @@ setuptools.setup(
     url="https://github.com/micahflee/passphraseme",
     packages=["passphraseme"],
     package_data={"passphraseme": ["wordlists/*.txt"]},
-    classifiers=(
+    classifiers=[
         "Programming Language :: Python",
         "Topic :: Security :: Cryptography",
         "Topic :: Software Development :: Libraries :: Python Modules",
@@ -24,7 +24,7 @@ setuptools.setup(
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
         "Intended Audience :: System Administrators",
-    ),
+    ],
     entry_points={
         "console_scripts": [
             "passphraseme = passphraseme:main",
