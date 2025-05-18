@@ -97,7 +97,7 @@ def main():
 
         if args.large:
             filename = os.path.join(wordlists_path, "eff_large_wordlist.txt")
-        if args.short1:
+        elif args.short1:
             filename = os.path.join(wordlists_path, "eff_short_wordlist_1.txt")
         elif args.short2:
             filename = os.path.join(wordlists_path, "eff_short_wordlist_2_0.txt")
