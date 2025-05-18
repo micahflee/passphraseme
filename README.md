@@ -5,7 +5,7 @@ A quick and simple cryptographically secure script to generate high entropy pass
 ## Installation
 
 ```sh
-pip3 install passphraseme
+pip install passphraseme
 ```
 
 ## Usage
